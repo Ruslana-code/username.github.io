@@ -1063,59 +1063,71 @@
     </section>
 
     <!-- Historical Section -->
-    <section id="historical" class="historical">
-        <div class="container">
-            <h2 class="section-title historical-title">Историческая ценность - воспоминания</h2>
-            <p class="historical-intro">
-                Этот раздел посвящен воспоминаниям, историям и личным открытиям, связанным с городом Октябрьск. 
-                Здесь жители и гости города делятся своими рассказами, фотографиями и воспоминаниями, 
-                создавая живую летопись нашего города.
-            </p>
-            
-            <div class="historical-content">
-                <div class="stories-container" id="storiesContainer">
-                    <!-- Истории будут добавляться с помощью JavaScript -->
-                    <div class="empty-stories">
-                        <i class="fas fa-book-open"></i>
-                        <p>Пока нет ни одной истории. Будьте первым, кто поделится воспоминаниями о городе!</p>
-                    </div>
-                </div>
-                
-                <div class="story-form-container">
-                    <h3>Поделитесь своей историей</h3>
-                    <form id="storyForm">
-                        <div class="form-group">
-                            <label for="authorName">Ваше имя *</label>
-                            <input type="text" id="authorName" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="storyTitle">Заголовок истории *</label>
-                            <input type="text" id="storyTitle" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="storyText">Ваш рассказ *</label>
-                            <textarea id="storyText" class="form-control" placeholder="Расскажите о значимом событии, воспоминании или открытии, связанном с городом Октябрьск..." required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Добавить фотографию (необязательно)</label>
-                            <div class="file-upload">
-                                <div class="file-upload-btn">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <span>Выберите файл</span>
-                                </div>
-                                <input type="file" id="storyImage" accept="image/*">
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Опубликовать историю</button>
-                    </form>
+<section id="historical" class="historical">
+    <div class="container">
+        <h2 class="section-title historical-title">Историческая ценность - воспоминания</h2>
+        <p class="historical-intro">
+            Этот раздел посвящен воспоминаниям, историям и личным открытиям, связанным с городом Октябрьск. 
+            Здесь жители и гости города делятся своими рассказами, фотографиями и воспоминаниями, 
+            создавая живую летопись нашего города.
+        </p>
+        
+        <div class="historical-content">
+            <div class="stories-container" id="storiesContainer">
+                <div class="empty-stories">
+                    <i class="fas fa-book-open"></i>
+                    <p>Пока нет ни одной истории. Будьте первым, кто поделится воспоминаниями о городе!</p>
                 </div>
             </div>
+            
+            <div class="story-form-container">
+                <h3>Поделитесь своей историей</h3>
+                <form id="storyForm" action="https://formspree.io/f/xovgqgek" method="POST">
+                    <!-- Скрытые поля для Formspree -->
+                    <input type="hidden" name="_subject" value="📖 Новая история для сайта Октябрьск">
+                    <input type="hidden" name="_replyto" value="msh_vl@mail.ru">
+                    <input type="hidden" name="_language" value="ru">
+                    
+                    <div class="form-group">
+                        <label for="authorName">Ваше имя *</label>
+                        <input type="text" id="authorName" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="authorEmail">Ваш email *</label>
+                        <input type="email" id="authorEmail" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storyTitle">Заголовок истории *</label>
+                        <input type="text" id="storyTitle" name="title" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storyText">Ваш рассказ *</label>
+                        <textarea id="storyText" name="message" class="form-control" placeholder="Расскажите о значимом событии, воспоминании или открытии, связанном с городом Октябрьск..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Добавить фотографию (необязательно)</label>
+                        <div class="file-upload">
+                            <div class="file-upload-btn">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Выберите файл</span>
+                            </div>
+                            <input type="file" id="storyImage" accept="image/*">
+                        </div>
+                        <small style="color: #666; font-size: 0.8rem;">Примечание: Фотографии будут отображаться только на сайте</small>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Опубликовать историю</button>
+                    
+                    <div id="storyFormMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
@@ -1252,7 +1264,12 @@
             </div>
             
             <div class="feedback-form">
-                <form id="suggestionForm" action="send_email.php" method="POST">
+                <form id="suggestionForm" action="https://formspree.io/f/meoyqykl" method="POST">
+                    <!-- Скрытые поля для Formspree -->
+                    <input type="hidden" name="_subject" value="💡 Новое предложение для сайта Октябрьск">
+                    <input type="hidden" name="_replyto" value="msh_vl@mail.ru">
+                    <input type="hidden" name="_language" value="ru">
+                    
                     <div class="form-group">
                         <label for="name">Ваше имя *</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -1282,8 +1299,7 @@
                     
                     <button type="submit" class="submit-btn">Отправить предложение</button>
                     
-                    <!-- Сообщение о статусе отправки -->
-                    <div id="formMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
+                    <div id="suggestionFormMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
                 </form>
             </div>
         </div>
@@ -1336,89 +1352,136 @@
             });
         });
         
-        // Обработка формы добавления истории
-        document.getElementById('storyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const authorName = document.getElementById('authorName').value;
-            const storyTitle = document.getElementById('storyTitle').value;
-            const storyText = document.getElementById('storyText').value;
-            const storyImage = document.getElementById('storyImage').files[0];
-            
-            // Создаем новую историю
-            addNewStory(authorName, storyTitle, storyText, storyImage);
-            
-            // Очищаем форму
-            this.reset();
-            
-            // Показываем сообщение об успехе
-            alert('Спасибо! Ваша история успешно добавлена.');
-        });
-        
-        // Функция добавления новой истории
-        function addNewStory(author, title, text, imageFile) {
-            const storiesContainer = document.getElementById('storiesContainer');
-            
-            // Убираем сообщение о пустом разделе, если оно есть
-            const emptyStories = storiesContainer.querySelector('.empty-stories');
-            if (emptyStories) {
-                emptyStories.remove();
-            }
-            
-            // Создаем карточку истории
-            const storyCard = document.createElement('div');
-            storyCard.className = 'story-card';
-            
-            // Форматируем дату
-            const now = new Date();
-            const formattedDate = `${now.getDate().toString().padStart(2, '0')}.${(now.getMonth()+1).toString().padStart(2, '0')}.${now.getFullYear()}`;
-            
-            // Создаем HTML для карточки
-            storyCard.innerHTML = `
-                <div class="story-header">
-                    <div class="story-author">${author}</div>
-                    <div class="story-date">${formattedDate}</div>
-                </div>
-                <h3 class="story-title">${title}</h3>
-                <p class="story-text">${text}</p>
-                ${imageFile ? `<img class="story-image" src="${URL.createObjectURL(imageFile)}" alt="Иллюстрация к истории">` : ''}
-                <div class="story-tags">
-                    <span class="story-tag">Воспоминания</span>
-                    <span class="story-tag">Октябрьск</span>
-                </div>
-            `;
-            
-            // Добавляем карточку в начало контейнера
-            storiesContainer.prepend(storyCard);
+      // Обработка формы "Поделиться историей"
+document.getElementById('storyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = form.querySelector('.submit-btn');
+    const formMessage = document.getElementById('storyFormMessage');
+    
+    // Показываем загрузку
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
+    formMessage.style.display = 'none';
+    
+    // Собираем данные для локального отображения
+    const authorName = document.getElementById('authorName').value;
+    const storyTitle = document.getElementById('storyTitle').value;
+    const storyText = document.getElementById('storyText').value;
+    const storyImage = document.getElementById('storyImage').files[0];
+    
+    // Отправка формы через Formspree
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
         }
-        
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessage.textContent = '✅ Спасибо! Ваша история отправлена и будет опубликована после проверки.';
+            formMessage.style.backgroundColor = '#d4edda';
+            formMessage.style.color = '#155724';
             
-            // Добавляем примеры историй на страницу
-            sampleStories.forEach(story => {
-                const storiesContainer = document.getElementById('storiesContainer');
-                const emptyStories = storiesContainer.querySelector('.empty-stories');
-                if (emptyStories) {
-                    emptyStories.remove();
-                }
-                
-                const storyCard = document.createElement('div');
-                storyCard.className = 'story-card';
-                storyCard.innerHTML = `
-                    <div class="story-header">
-                        <div class="story-author">${story.author}</div>
-                        <div class="story-date">${story.date}</div>
-                    </div>
-                    <h3 class="story-title">${story.title}</h3>
-                    <p class="story-text">${story.text}</p>
-                    <div class="story-tags">
-                        <span class="story-tag">Воспоминания</span>
-                        <span class="story-tag">Октябрьск</span>
-                    </div>
-                `;
-                
-                storiesContainer.prepend(storyCard);
-            });
-            
+            // Добавляем историю на сайт (локально)
+            addNewStory(authorName, storyTitle, storyText, storyImage);
+            form.reset();
+        } else {
+            throw new Error('Ошибка отправки');
+        }
+    })
+    .catch(error => {
+        formMessage.textContent = '❌ Ошибка отправки истории. Пожалуйста, попробуйте еще раз.';
+        formMessage.style.backgroundColor = '#f8d7da';
+        formMessage.style.color = '#721c24';
+    })
+    .finally(() => {
+        formMessage.style.display = 'block';
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+});
+
+// Обработка формы "Предложить изменения"
+document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = form.querySelector('.submit-btn');
+    const formMessage = document.getElementById('suggestionFormMessage');
+    
+    // Показываем загрузку
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
+    formMessage.style.display = 'none';
+    
+    // Отправка формы через Formspree
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessage.textContent = '✅ Спасибо! Ваше предложение успешно отправлено.';
+            formMessage.style.backgroundColor = '#d4edda';
+            formMessage.style.color = '#155724';
+            form.reset();
+        } else {
+            throw new Error('Ошибка отправки');
+        }
+    })
+    .catch(error => {
+        formMessage.textContent = '❌ Ошибка отправки сообщения. Пожалуйста, попробуйте еще раз.';
+        formMessage.style.backgroundColor = '#f8d7da';
+        formMessage.style.color = '#721c24';
+    })
+    .finally(() => {
+        formMessage.style.display = 'block';
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+});
+
+// Функция добавления новой истории (остается без изменений)
+function addNewStory(author, title, text, imageFile) {
+    const storiesContainer = document.getElementById('storiesContainer');
+    
+    const emptyStories = storiesContainer.querySelector('.empty-stories');
+    if (emptyStories) {
+        emptyStories.remove();
+    }
+    
+    const storyCard = document.createElement('div');
+    storyCard.className = 'story-card';
+    
+    const now = new Date();
+    const formattedDate = `${now.getDate().toString().padStart(2, '0')}.${(now.getMonth()+1).toString().padStart(2, '0')}.${now.getFullYear()}`;
+    
+    storyCard.innerHTML = `
+        <div class="story-header">
+            <div class="story-author">${author}</div>
+            <div class="story-date">${formattedDate}</div>
+        </div>
+        <h3 class="story-title">${title}</h3>
+        <p class="story-text">${text}</p>
+        ${imageFile ? `<img class="story-image" src="${URL.createObjectURL(imageFile)}" alt="Иллюстрация к истории">` : ''}
+        <div class="story-tags">
+            <span class="story-tag">Воспоминания</span>
+            <span class="story-tag">Октябрьск</span>
+        </div>
+    `;
+    
+    storiesContainer.prepend(storyCard);
+}
             // Обработка переключения категорий в фотогалерее
             const galleryTabs = document.querySelectorAll('.gallery-tab');
             const galleryCategories = document.querySelectorAll('.gallery-category');
@@ -1469,54 +1532,6 @@
                 element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(element);
             });
-            
-           // Обработка формы предложений с AJAX
-document.getElementById('suggestionForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Показываем загрузку
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
-    formMessage.style.display = 'none';
-    
-    // Собираем данные формы
-    const formData = new FormData(form);
-    
-    // Отправка AJAX запроса
-    fetch('send_email.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        if (data === 'success') {
-            formMessage.textContent = '✅ Спасибо! Ваше сообщение успешно отправлено.';
-            formMessage.style.backgroundColor = '#d4edda';
-            formMessage.style.color = '#155724';
-            form.reset();
-        } else {
-            throw new Error('Ошибка отправки');
-        }
-    })
-    .catch(error => {
-        formMessage.textContent = '❌ Ошибка отправки сообщения. Пожалуйста, попробуйте еще раз или свяжитесь с нами по email.';
-        formMessage.style.backgroundColor = '#f8d7da';
-        formMessage.style.color = '#721c24';
-    })
-    .finally(() => {
-        formMessage.style.display = 'block';
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        
-        // Прокрутка к сообщению
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-});
     </script>
 </body>
 </html>
