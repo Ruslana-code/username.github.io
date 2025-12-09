@@ -678,78 +678,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* Feedback Section */
-        .feedback {
-            background: var(--light);
-        }
-
-        .feedback-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: flex-start;
-        }
-
-        .feedback-info {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .feedback-info h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .feedback-info p {
-            margin-bottom: 15px;
-        }
-
-        .feedback-info ul {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .feedback-info li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .feedback-info i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-
-        .feedback-form {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .form-select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            background: white;
-            cursor: pointer;
-        }
-
-        .form-select:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.2);
-        }
-
+        /* Feedback Section - УДАЛЕН */
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -921,7 +851,7 @@
                         <li><a href="#historical">Воспоминания</a></li>
                         <li><a href="#gallery">Фотогалерея</a></li>
                         <li><a href="#infrastructure">Инфраструктура</a></li>
-                        <li><a href="#feedback">Предложить изменения</a></li>
+                        <!-- Убрана ссылка на предложения изменений -->
                     </ul>
                 </nav>
             </div>
@@ -1062,7 +992,7 @@
         </div>
     </section>
 
-    <!-- Historical Section -->
+    <!-- Historical Section - Только отображение, без формы -->
 <section id="historical" class="historical">
     <div class="container">
         <h2 class="section-title historical-title">Историческая ценность - воспоминания</h2>
@@ -1076,54 +1006,9 @@
             <div class="stories-container" id="storiesContainer">
                 <div class="empty-stories">
                     <i class="fas fa-book-open"></i>
-                    <p>Пока нет ни одной истории. Будьте первым, кто поделится воспоминаниями о городе!</p>
+                    <p>Воспоминания горожан и гостей города о событиях, местах и людях Октябрьска.</p>
+                    <p style="margin-top: 15px; font-style: italic;">Раздел в разработке</p>
                 </div>
-            </div>
-            
-            <div class="story-form-container">
-                <h3>Поделитесь своей историей</h3>
-                <form id="storyForm" action="https://formspree.io/f/xovgqgek" method="POST">
-                    <!-- Скрытые поля для Formspree -->
-                    <input type="hidden" name="_subject" value="📖 Новая история для сайта Октябрьск">
-                    <input type="hidden" name="_replyto" value="msh_vl@mail.ru">
-                    <input type="hidden" name="_language" value="ru">
-                    
-                    <div class="form-group">
-                        <label for="authorName">Ваше имя *</label>
-                        <input type="text" id="authorName" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="authorEmail">Ваш email *</label>
-                        <input type="email" id="authorEmail" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="storyTitle">Заголовок истории *</label>
-                        <input type="text" id="storyTitle" name="title" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="storyText">Ваш рассказ *</label>
-                        <textarea id="storyText" name="message" class="form-control" placeholder="Расскажите о значимом событии, воспоминании или открытии, связанном с городом Октябрьск..." required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Добавить фотографию (необязательно)</label>
-                        <div class="file-upload">
-                            <div class="file-upload-btn">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>Выберите файл</span>
-                            </div>
-                            <input type="file" id="storyImage" accept="image/*">
-                        </div>
-                        <small style="color: #666; font-size: 0.8rem;">Примечание: Фотографии будут отображаться только на сайте</small>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Опубликовать историю</button>
-                    
-                    <div id="storyFormMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
-                </form>
             </div>
         </div>
     </div>
@@ -1242,70 +1127,6 @@
         </div>
     </section>
 
-    <!-- Feedback Section -->
-<section id="feedback" class="feedback">
-    <div class="container">
-        <h2 class="section-title">Предложить внесение изменений</h2>
-        <div class="feedback-content">
-            <div class="feedback-info">
-                <h3>Ваше мнение важно для нас</h3>
-                <p>Мы стремимся сделать информацию о городе Октябрьск максимально полной и актуальной. Если вы обнаружили неточность или хотите предложить улучшения для сайта, пожалуйста, заполните форму.</p>
-                
-                <p>Вы можете предложить:</p>
-                <ul>
-                    <li><i class="fas fa-edit"></i> Исправление фактических ошибок</li>
-                    <li><i class="fas fa-image"></i> Добавление новых фотографий</li>
-                    <li><i class="fas fa-info-circle"></i> Дополнение информации о городе</li>
-                    <li><i class="fas fa-lightbulb"></i> Идеи по улучшению сайта</li>
-                    <li><i class="fas fa-map-marked-alt"></i> Информацию о новых объектах инфраструктуры</li>
-                </ul>
-                
-                <p>Мы рассмотрим все предложения и постараемся реализовать лучшие из них.</p>
-            </div>
-            
-            <div class="feedback-form">
-                <form id="suggestionForm" action="https://formspree.io/f/meoyqykl" method="POST">
-                    <!-- Скрытые поля для Formspree -->
-                    <input type="hidden" name="_subject" value="💡 Новое предложение для сайта Октябрьск">
-                    <input type="hidden" name="_replyto" value="msh_vl@mail.ru">
-                    <input type="hidden" name="_language" value="ru">
-                    
-                    <div class="form-group">
-                        <label for="name">Ваше имя *</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email для обратной связи *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="category">Тип предложения *</label>
-                        <select id="category" name="category" class="form-select" required>
-                            <option value="">Выберите категорию</option>
-                            <option value="correction">Исправление ошибки</option>
-                            <option value="addition">Дополнение информации</option>
-                            <option value="photo">Добавление фотографий</option>
-                            <option value="improvement">Предложение по улучшению сайта</option>
-                            <option value="other">Другое</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Ваше предложение *</label>
-                        <textarea id="message" name="message" class="form-control" placeholder="Опишите подробно, какие изменения вы предлагаете внести..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить предложение</button>
-                    
-                    <div id="suggestionFormMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1322,7 +1143,6 @@
                     <a href="#historical">Воспоминания</a>
                     <a href="#gallery">Фотогалерея</a>
                     <a href="#infrastructure">Инфраструктура</a>
-                    <a href="#feedback">Предложить изменения</a>
                 </div>
                 <div class="footer-section">
                     <h3>Контакты</h3>
@@ -1352,187 +1172,58 @@
             });
         });
         
-      // Обработка формы "Поделиться историей"
-document.getElementById('storyForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('storyFormMessage');
-    
-    // Показываем загрузку
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
-    formMessage.style.display = 'none';
-    
-    // Собираем данные для локального отображения
-    const authorName = document.getElementById('authorName').value;
-    const storyTitle = document.getElementById('storyTitle').value;
-    const storyText = document.getElementById('storyText').value;
-    const storyImage = document.getElementById('storyImage').files[0];
-    
-    // Отправка формы через Formspree
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            formMessage.textContent = '✅ Спасибо! Ваша история отправлена и будет опубликована после проверки.';
-            formMessage.style.backgroundColor = '#d4edda';
-            formMessage.style.color = '#155724';
-            
-            // Добавляем историю на сайт (локально)
-            addNewStory(authorName, storyTitle, storyText, storyImage);
-            form.reset();
-        } else {
-            throw new Error('Ошибка отправки');
-        }
-    })
-    .catch(error => {
-        formMessage.textContent = '❌ Ошибка отправки истории. Пожалуйста, попробуйте еще раз.';
-        formMessage.style.backgroundColor = '#f8d7da';
-        formMessage.style.color = '#721c24';
-    })
-    .finally(() => {
-        formMessage.style.display = 'block';
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-});
-
-// Обработка формы "Предложить изменения"
-document.getElementById('suggestionForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const submitBtn = form.querySelector('.submit-btn');
-    const formMessage = document.getElementById('suggestionFormMessage');
-    
-    // Показываем загрузку
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
-    formMessage.style.display = 'none';
-    
-    // Отправка формы через Formspree
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            formMessage.textContent = '✅ Спасибо! Ваше предложение успешно отправлено.';
-            formMessage.style.backgroundColor = '#d4edda';
-            formMessage.style.color = '#155724';
-            form.reset();
-        } else {
-            throw new Error('Ошибка отправки');
-        }
-    })
-    .catch(error => {
-        formMessage.textContent = '❌ Ошибка отправки сообщения. Пожалуйста, попробуйте еще раз.';
-        formMessage.style.backgroundColor = '#f8d7da';
-        formMessage.style.color = '#721c24';
-    })
-    .finally(() => {
-        formMessage.style.display = 'block';
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-});
-
-// Функция добавления новой истории (остается без изменений)
-function addNewStory(author, title, text, imageFile) {
-    const storiesContainer = document.getElementById('storiesContainer');
-    
-    const emptyStories = storiesContainer.querySelector('.empty-stories');
-    if (emptyStories) {
-        emptyStories.remove();
-    }
-    
-    const storyCard = document.createElement('div');
-    storyCard.className = 'story-card';
-    
-    const now = new Date();
-    const formattedDate = `${now.getDate().toString().padStart(2, '0')}.${(now.getMonth()+1).toString().padStart(2, '0')}.${now.getFullYear()}`;
-    
-    storyCard.innerHTML = `
-        <div class="story-header">
-            <div class="story-author">${author}</div>
-            <div class="story-date">${formattedDate}</div>
-        </div>
-        <h3 class="story-title">${title}</h3>
-        <p class="story-text">${text}</p>
-        ${imageFile ? `<img class="story-image" src="${URL.createObjectURL(imageFile)}" alt="Иллюстрация к истории">` : ''}
-        <div class="story-tags">
-            <span class="story-tag">Воспоминания</span>
-            <span class="story-tag">Октябрьск</span>
-        </div>
-    `;
-    
-    storiesContainer.prepend(storyCard);
-}
-            // Обработка переключения категорий в фотогалерее
-            const galleryTabs = document.querySelectorAll('.gallery-tab');
-            const galleryCategories = document.querySelectorAll('.gallery-category');
-            
-            galleryTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Убираем активный класс со всех вкладок
-                    galleryTabs.forEach(t => t.classList.remove('active'));
-                    // Добавляем активный класс текущей вкладке
-                    this.classList.add('active');
-                    
-                    // Скрываем все категории
-                    galleryCategories.forEach(category => {
-                        category.classList.remove('active');
-                    });
-                    
-                    // Показываем выбранную категорию
-                    const categoryId = this.getAttribute('data-category');
-                    if (categoryId === 'all') {
-                        // Для категории "Все" показываем все изображения
-                        document.getElementById('gallery-all').classList.add('active');
-                    } else {
-                        // Для конкретной категории показываем только её
-                        document.getElementById(`gallery-${categoryId}`).classList.add('active');
-                    }
+        // Обработка переключения категорий в фотогалерее
+        const galleryTabs = document.querySelectorAll('.gallery-tab');
+        const galleryCategories = document.querySelectorAll('.gallery-category');
+        
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Убираем активный класс со всех вкладок
+                galleryTabs.forEach(t => t.classList.remove('active'));
+                // Добавляем активный класс текущей вкладке
+                this.classList.add('active');
+                
+                // Скрываем все категории
+                galleryCategories.forEach(category => {
+                    category.classList.remove('active');
                 });
+                
+                // Показываем выбранную категорию
+                const categoryId = this.getAttribute('data-category');
+                if (categoryId === 'all') {
+                    // Для категории "Все" показываем все изображения
+                    document.getElementById('gallery-all').classList.add('active');
+                } else {
+                    // Для конкретной категории показываем только её
+                    document.getElementById(`gallery-${categoryId}`).classList.add('active');
+                }
             });
-            
-            // Анимация появления элементов при прокрутке
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Применяем анимацию к секциям и карточкам
-            document.querySelectorAll('section, .advantage-card, .timeline-item, .gallery-item').forEach(element => {
-                element.style.opacity = 0;
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(element);
+        });
+        
+        // Анимация появления элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, observerOptions);
+        
+        // Применяем анимацию к секциям и карточкам
+        document.querySelectorAll('section, .advantage-card, .timeline-item, .gallery-item').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
     </script>
 </body>
 </html>
+
 
